@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Builing branch1'
+				sh javac HelloWorld.java
+				sh java HelloWorld
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing branch1'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying branch1'
+            }
+        }
+    }
+}
